@@ -2,6 +2,14 @@
 
 ;; Copyright (C) 2014 Benaiah Mischenko
 
+;; Author: Benaiah Mischenko <benaiah@mischenko.com>
+;; Maintainer: Benaiah Mischenko <benaiah@mischenko.com>
+;; URL: http://github.com/benaiah/seethru
+;; Created: 11th November 2014
+;; Version: 0.1
+;; Keywords: lisp, tools, alpha, transparency
+;; Package-Requires: ((shadchen "1.4"))
+
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation, either version 3 of the License, or
@@ -14,14 +22,6 @@
 
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-;; Author: Benaiah Mischenko <benaiah@mischenko.com>
-;; Maintainer: Benaiah Mischenko <benaiah@mischenko.com>
-;; URL: http://github.com/benaiah/seethru
-;; Created: 11th November 2014
-;; Version: 0.1
-;; Keywords: lisp, tools, alpha, transparency
-;; Package-Requires: ((shadchen "1.4"))
 
 ;;; Commentary:
 ;; Seethru: Easily change Emacs' frame transparency
