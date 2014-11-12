@@ -64,12 +64,14 @@
 
 (require 'shadchen)
 
+;;;###autoload
 (defun seethru (value)
   "Sets the transparency of the currently selected Emacs
 frame (0-100, where 0 is transparent and 100 is opaque)"
   (interactive "nSet transparency (0 is transparent - 100 is opaque)")
   (set-frame-parameter (selected-frame) 'alpha value))
 
+;;;###autoload
 (defun seethru-relative (value)
   (let* ((current-transparency (frame-parameter (selected-frame) 'alpha))
          (summed-transparency (+ current-transparency value)))
@@ -78,6 +80,7 @@ frame (0-100, where 0 is transparent and 100 is opaque)"
                     ((? (lambda (x) (> x 100)) x) 100)
                     (val val)))))
 
+;;;###autoload
 (defun seethru-recommended-keybinds (&optional prefix)
   (let ((pre (if (not prefix) "C-c" prefix)))
     (global-set-key (kbd (concat pre " 8"))
@@ -89,11 +92,14 @@ frame (0-100, where 0 is transparent and 100 is opaque)"
     (global-set-key (kbd (concat pre " ("))
                     (lambda () (interactive) (seethru-relative -5)))))
 
+;;;###autoload
 (defun seethru-mouse-bindings (&optional prefix)
   (let ((pre (if (not prefix) "M" prefix)))
     (global-set-key (kbd (concat "<" pre "-wheel-down>"))
                     (lambda () (interactive) (seethru-relative 1)))
     (global-set-key (kbd (concat "<" pre "-wheel-up>"))
                     (lambda () (interactive) (seethru-relative -1)))))
+
+(provide 'seethru)
 
 ;;; seethru.el ends here
