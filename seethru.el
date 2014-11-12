@@ -96,4 +96,4 @@ frame (0-100, where 0 is transparent and 100 is opaque)"
     (global-set-key (kbd (concat "<" pre "-wheel-up>"))
                     (lambda () (interactive) (seethru-relative -1)))))
 
-;; seethru.el ends here
+;;; seethru.el ends here
