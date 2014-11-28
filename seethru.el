@@ -82,19 +82,19 @@ frame (0-100, where 0 is transparent and 100 is opaque)"
 
 ;;;###autoload
 (defun seethru-recommended-keybinds (&optional prefix)
-  (let ((pre (if (not prefix) "C-c" prefix)))
+  (let ((pre (or prefix "C-c")))
     (global-set-key (kbd (concat pre " 8"))
                     (lambda () (interactive) (seethru-relative 10)))
     (global-set-key (kbd (concat pre " *"))
                     (lambda () (interactive) (seethru-relative 5)))
     (global-set-key (kbd (concat pre " 9"))
-                    (lambda () (interactive) (seethru-relative-10)))
+                    (lambda () (interactive) (seethru-relative -10)))
     (global-set-key (kbd (concat pre " ("))
                     (lambda () (interactive) (seethru-relative -5)))))
 
 ;;;###autoload
 (defun seethru-mouse-bindings (&optional prefix)
-  (let ((pre (if (not prefix) "M" prefix)))
+  (let ((pre (or prefix "M")))
     (global-set-key (kbd (concat "<" pre "-wheel-down>"))
                     (lambda () (interactive) (seethru-relative 1)))
     (global-set-key (kbd (concat "<" pre "-wheel-up>"))
