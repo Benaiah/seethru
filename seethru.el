@@ -6,7 +6,7 @@
 ;; Maintainer: Benaiah Mischenko <benaiah@mischenko.com>
 ;; URL: http://github.com/benaiah/seethru
 ;; Created: 11th November 2014
-;; Version: 0.2
+;; Version: 0.3
 ;; Keywords: lisp, tools, alpha, transparency
 ;; Package-Requires: ((shadchen "1.4"))
 
