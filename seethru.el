@@ -77,10 +77,10 @@ frame (0-100, where 0 is transparent and 100 is opaque)"
           (let ((alph (frame-parameter (selected-frame) 'alpha)))
             (if alph alph 100)))
          (summed-transparency (+ current-transparency value)))
-    (transparency (match summed-transparency
-                    ((? (lambda (x) (< x 0)) x) 0)
-                    ((? (lambda (x) (> x 100)) x) 100)
-                    (val val)))))
+    (seethru (match summed-transparency
+               ((? (lambda (x) (< x 0)) x) 0)
+               ((? (lambda (x) (> x 100)) x) 100)
+               (val val)))))
 
 ;;;###autoload
 (defun seethru-recommended-keybinds (&optional prefix)
