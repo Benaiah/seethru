@@ -73,7 +73,9 @@ frame (0-100, where 0 is transparent and 100 is opaque)"
 
 ;;;###autoload
 (defun seethru-relative (value)
-  (let* ((current-transparency (frame-parameter (selected-frame) 'alpha))
+  (let* ((current-transparency
+          (let ((alph (frame-parameter (selected-frame) 'alpha)))
+            (if alph alph 100)))
          (summed-transparency (+ current-transparency value)))
     (transparency (match summed-transparency
                     ((? (lambda (x) (< x 0)) x) 0)
